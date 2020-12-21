@@ -10,7 +10,7 @@ package com.lab2;
 */
 
 /**
- * Interface  lab 1. 
+ * Interface  lab 2. 
  * 
  * @version 1.0 21 Dec 2020
  * @author Aleksey Krutko

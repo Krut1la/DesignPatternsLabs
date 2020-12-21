@@ -9,7 +9,7 @@ package com.lab2;
 */
 
 /**
- * Class implements Interface 3  lab 1. 
+ * Class implements Interface 3  lab 2. 
  * 
  * @version 1.0 21 Dec 2020
  * @author Aleksey Krutko

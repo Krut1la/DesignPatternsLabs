@@ -1,4 +1,6 @@
-package com.lab2;
+package com.lab3;
+
+import java.awt.Color;
 
 /*
  * Aleksey Krutko
@@ -9,16 +11,13 @@ package com.lab2;
 */
 
 /**
- * Interface  lab 2. 
+ * Interface for image lab 3. 
  * 
  * @version 1.0 21 Dec 2020
  * @author Aleksey Krutko
  *
  */
-public interface If1 extends If3 {
-	/**
-	 * Prints text 1
-	 * 
-	 */
-	public void meth1();
+
+public interface Image {
+	public Color getColorAt(int x, int y); 
 }
