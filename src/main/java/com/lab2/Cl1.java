@@ -17,10 +17,18 @@ package com.lab2;
  */
 public class Cl1 extends Cl3 implements If1{
 
+	/**
+	 * Constructor
+	 * 
+	 */
 	public Cl1() {
 
 	}
 
+	/**
+	 * Prints text 1
+	 * 
+	 */
 	@Override
 	public void meth1() {
 		System.out.println("class 1. method 1");

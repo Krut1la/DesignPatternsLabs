@@ -17,5 +17,9 @@ package com.lab2;
  *
  */
 public interface If3 {
+	/**
+	 * Prints text 3
+	 * 
+	 */
 	public void meth3();
 }

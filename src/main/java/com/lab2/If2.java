@@ -16,5 +16,9 @@ package com.lab2;
  *
  */
 public interface If2 extends If1{
+	/**
+	 * Prints text 2
+	 * 
+	 */
 	public void meth2();
 }
