@@ -35,6 +35,16 @@
             description="Clean build dirs">
       <delete dir="${buildDir}" />      
     </target>
+	
+<!-- ==================== Clean Jar Target ================================== --> 
+    <target name="clean-jar" 
+            description="Clean jar files">
+		<delete>
+			<fileset dir="." >
+				<include name="**/*.jar"/>
+			</fileset>
+		</delete>      
+    </target>	
 
 <!-- ==================== Prepare Target ================================== -->
     <target name="prepare"
@@ -70,7 +80,7 @@
     <target name="createJAR" 
             depends="compile"
             description="Create JAR archive" >
-        <jar destfile="${buildDir}/${jar.name}" basedir="${outputDir}">
+        <jar destfile="${buildDir}/${jar.name}"	basedir="${outputDir}">
               <manifest>
                 <attribute name="Created-By" value="${app.author} - (${app.company})"/>
                 <attribute name="Built-By" value="${user.name}"/>
@@ -86,6 +96,30 @@
               </manifest>           
         </jar>
     </target>
+	
+<!-- ==================== Create Full JAR archive Target ================================== -->    
+    <target name="createFullJAR" 
+            depends="compile"
+            description="Create Full JAR archive" >
+        <jar destfile="${buildDir}/${jar.name}"	basedir="${outputDir}">
+        	<fileset dir="." >				
+        		<exclude name="**/out/"/>
+			</fileset>
+              <manifest>
+                <attribute name="Created-By" value="${app.author} - (${app.company})"/>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="${jar.mainClass}"/>
+                <section name="${app.name}">                  
+                  <attribute name="Specification-Title" value="${app.title}"/>
+                  <attribute name="Specification-Version" value="${app.version}"/>
+                  <attribute name="Specification-Vendor" value="${app.company}"/>
+                  <attribute name="Implementation-Title" value="${app.name}"/>
+                  <attribute name="Implementation-Version" value="${app.version}"/> 
+                  <attribute name="Implementation-Vendor" value="${app.company}"/>
+                </section>
+              </manifest>           
+        </jar>
+    </target>	
 
 <!-- ==================== Generate Key for JAR signing Target ================================== -->      
    <target name="generateKey"
