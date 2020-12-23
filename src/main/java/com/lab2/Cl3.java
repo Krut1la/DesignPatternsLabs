@@ -1,5 +1,3 @@
-package com.lab2;
-
 /*
  * Aleksey Krutko
  * 
@@ -7,6 +5,7 @@ package com.lab2;
  * 
  * Copyright (c) 2020 
 */
+package com.lab2;
 
 /**
  * Class implements Interface 3  lab 2. 

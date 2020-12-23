@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.lab2","l":"Cl1"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.lab2","l":"Cl1"},{"p":"com.lab2","l":"Cl2"},{"p":"com.lab2","l":"Cl3"},{"p":"com.lab3","l":"FullAccessImage"},{"p":"com.lab2","l":"If1"},{"p":"com.lab2","l":"If2"},{"p":"com.lab2","l":"If3"},{"p":"com.lab3","l":"Image"},{"p":"com.lab3","l":"LimitedAccessImageProxy"},{"p":"com.lab111","l":"TestMain"}]
