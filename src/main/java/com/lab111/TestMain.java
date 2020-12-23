@@ -5,6 +5,12 @@ import com.lab2.Cl2;
 import com.lab2.Cl3;
 import com.lab3.FullAccessImage;
 import com.lab3.LimitedAccessImageProxy;
+import com.lab4.DirectoryBase;
+import com.lab4.FileBase;
+import com.lab4.FileSystem;
+import com.lab4.FileSystemBase;
+import com.lab4.FileSystemEntryDirectory;
+import com.lab4.FileSystemEntryFile;
 
 /**
  * Template first class.
@@ -61,15 +67,33 @@ public final class TestMain {
 	  }
   }
   
+  private static void runLab4() {
+	  FileSystemBase fileSystem = new FileSystemBase();
+	  
+	  fileSystem.getFileSystemEntries().add(new FileSystemEntryFile(new FileBase(), "file1.txt"));
+	  fileSystem.getFileSystemEntries().add(new FileSystemEntryFile(new FileBase(), "file2.txt"));
+	  fileSystem.getFileSystemEntries().add(new FileSystemEntryFile(new FileBase(), "file3.txt"));
+	  
+	  fileSystem.getFileSystemEntries().add(new FileSystemEntryDirectory(new DirectoryBase(), "Directory1"));
+	  fileSystem.getFileSystemEntries().add(new FileSystemEntryDirectory(new DirectoryBase(), "Directory2"));
+	  
+	  fileSystem.create();
+	  
+	  System.out.println();
+	  
+	  fileSystem.destroy();
+  }
+  
   /**
    * Invokes at application startup.
    * @param args Parameters from command line
    */
   public static void main(final String[] args) {
-    System.out.println("This is template example for main class");
+    System.out.println("Lab work results:");
     
     //runLab2();
-    runLab3();
+    //runLab3();
+    runLab4();
 
   }
 
