@@ -1,5 +1,6 @@
 package com.lab111;
 
+
 import com.lab2.Cl1;
 import com.lab2.Cl2;
 import com.lab2.Cl3;
@@ -7,10 +8,32 @@ import com.lab3.FullAccessImage;
 import com.lab3.LimitedAccessImageProxy;
 import com.lab4.DirectoryBase;
 import com.lab4.FileBase;
-import com.lab4.FileSystem;
 import com.lab4.FileSystemBase;
 import com.lab4.FileSystemEntryDirectory;
 import com.lab4.FileSystemEntryFile;
+import com.lab5.ButtonBase;
+import com.lab5.TextAreaBase;
+import com.lab5.WindowBase;
+import com.lab6.AddStrategy;
+import com.lab6.GameField;
+import com.lab6.SimpleGameField;
+import com.lab6.SortStrategy;
+import com.lab6.Strategy;
+import com.lab7.DrawBrushCommand;
+import com.lab7.DrawPencilCommand;
+import com.lab7.Ivoker;
+import com.lab7.Painter;
+import com.lab7.Paper;
+import com.lab7.ThickPaper;
+import com.lab8.Aggregator;
+import com.lab8.SuperAggregator;
+import com.lab9.CoolDatabaseFactory;
+import com.lab9.DataBaseFactory;
+import com.lab9.Loader;
+import com.lab9.NiceDatabaseFactory;
+import com.lab9.Schema;
+import com.lab9.Table;
+
 
 /**
  * Template first class.
@@ -84,6 +107,79 @@ public final class TestMain {
 	  fileSystem.destroy();
   }
   
+  private static void runLab5() {
+	  WindowBase winBase = new WindowBase();
+	  
+	  winBase.addControl(new ButtonBase());
+	  winBase.addControl(new TextAreaBase());
+	  winBase.addControl(new ButtonBase());
+	  winBase.addControl(new WindowBase());
+	  
+	  
+	  winBase.setSize(1000, 1000);
+  }
+  
+  private static void runLab6() {
+	  GameField testGameField = new SimpleGameField();
+	  
+	  Strategy strategy1 = new SortStrategy();
+	  Strategy strategy2 = new AddStrategy();
+	  
+	  System.out.println(testGameField);
+	  
+	  strategy1.Apply(testGameField);
+	  
+	  System.out.println(testGameField);
+	  
+	  strategy2.Apply(testGameField);
+	  
+	  System.out.println(testGameField);
+  }
+  
+  private static void runLab7() {
+	  Paper paper = new ThickPaper();
+	  
+	  Ivoker invoker = new Painter();
+	  
+	  invoker.registerCommand("Paint brush", new DrawBrushCommand(paper));
+	  invoker.registerCommand("Paint pencil", new DrawPencilCommand(paper));
+	  
+	  invoker.execute("Paint brush");
+	  invoker.execute("Paint pencil");
+	  invoker.execute("Paint brush");
+	  invoker.execute("Paint pencil");	  
+  }
+  
+  private static void runLab8() {
+	  
+	  Aggregator agregator = new SuperAggregator();
+	  
+	  agregator.iterate();
+	  
+  }
+  
+  private static void runLab9() {
+	  DataBaseFactory factory1 = new CoolDatabaseFactory();
+	  DataBaseFactory factory2 = new NiceDatabaseFactory();
+	  
+	  Loader loader = factory1.CreateLoader();
+	  Table table = factory1.CreateTable();
+	  Schema schema = factory1.CreateSchema();
+	  
+	  loader.load();
+	  table.showData();
+	  schema.showSchema();
+	  
+	  loader = factory2.CreateLoader();
+	  table = factory2.CreateTable();
+	  schema = factory2.CreateSchema();
+	  
+	  loader.load();
+	  table.showData();
+	  schema.showSchema();  
+	  
+  }
+  
   /**
    * Invokes at application startup.
    * @param args Parameters from command line
@@ -93,8 +189,11 @@ public final class TestMain {
     
     //runLab2();
     //runLab3();
-    runLab4();
-
+    //runLab4();
+    //runLab5();
+    //runLab6();
+    //runLab7();
+    runLab8();
+    //runLab9();
   }
-
 }
